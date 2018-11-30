@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class BootApp {
+public class BootFrontend {
     public static void main(String[] args) {
         // pass this class with the args
-        SpringApplication.run(BootApp.class, args);
+        SpringApplication.run(BootFrontend.class, args);
     }
 
 }
