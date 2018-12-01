@@ -52,6 +52,11 @@
         <version>1.3.6</version>
         <configuration>
           <repository>${docker.image.prefix}/${project.artifactId}</repository>
+            <buildArgs>
+                <ARTIFACT_ID>${project.artifactId}</ARTIFACT_ID>
+                <GROUP_ID>${project.groupId}</GROUP_ID>
+                <LMS_VERSION>${project.version}</LMS_VERSION>
+            </buildArgs>
         </configuration>
       </plugin>
 

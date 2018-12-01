@@ -17,6 +17,11 @@ public class BackendController {
         return "hello from backend.";
     }
 
+    @RequestMapping("/id")
+    public String myContainerId() {
+        return System.getenv("HOSTNAME");
+    }
+
     @RequestMapping("/vars")
     public String showEnvironmetVars() {
 
