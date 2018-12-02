@@ -19,7 +19,7 @@ public class BackendController {
 
     @RequestMapping("/id")
     public String myContainerId() {
-        return System.getenv("HOSTNAME");
+        return myId();
     }
 
     @RequestMapping("/vars")
@@ -31,6 +31,12 @@ public class BackendController {
             reply += String.format("%s=%s%n", envName, env.get(envName));
         }
         return reply;
+    }
+
+    private String myId (){
+        return System.getenv("ARTIFACT_ID") + ":" +
+                System.getenv("LMS_VERSION") + ":" +
+                System.getenv("HOSTNAME") + "\n";
     }
 
 }

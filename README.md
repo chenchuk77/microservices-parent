@@ -16,10 +16,10 @@ development :
 2. clean, compile, and build docker image
 3. run new version of the service
 
-frontend:
+frontend: (set backend ip when launch)
 docker stop $(docker ps | grep 8080|awk '{print $1}') && \
 mvn clean package dockerfile:build && \
-docker run -p 8080:8080 -t chenchuk77/frontend
+docker run -p 8080:8080 -e BACKEND_IP=192.168.2.57-t chenchuk77/frontend
 
 backend:
 docker stop $(docker ps | grep 8085|awk '{print $1}') && \
