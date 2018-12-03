@@ -1,7 +1,7 @@
 # Microservices parent
 
 This is a playground for k8s tests. 
-its a 2 module maven project, that creates a microservices in docker containers using spotify/dockerfile-maven-plugin.
+its a 2 modules maven project, that creates a microservices in docker containers using spotify/dockerfile-maven-plugin.
 The containers can talk to each other, this will help testing Scale-Out and High-Availability
 ## Getting Started
 
@@ -46,7 +46,14 @@ mvn clean package dockerfile:build && \
 docker run -p 8080:8080 -e BACKEND_IP=192.168.2.57-t chenchuk77/frontend
 ```
 
-## Deployment
+## Testing
+$ curl http://localhost:8080/id
+frontend:2.7-SNAPSHOT:6dd49c71566d
+
+$ curl http://localhost:8080/be
+served by: frontend:2.7-SNAPSHOT:6dd49c71566d , backend:3.3-SNAPSHOT:f8cd01979ded
+
+
 Add additional notes about how to deploy this on a live system
 
 ## Built With
