@@ -39,7 +39,7 @@ docker run -p 8085:8085 -t chenchuk77/backend
 ```
 
 Frontend development: 
-- set backend ip when launch
+- set backend ip when launch. this address should be accessible from the continer itself.
 ```
 docker stop $(docker ps | grep 8080|awk '{print $1}') && \
 mvn clean package dockerfile:build && \
@@ -47,11 +47,16 @@ docker run -p 8080:8080 -e BACKEND_IP=192.168.2.57-t chenchuk77/frontend
 ```
 
 ## Testing
+- use the /be for making a nested http call. this will show versions of both components and also the container id 
+
+```
 $ curl http://localhost:8080/id
 frontend:2.7-SNAPSHOT:6dd49c71566d
 
 $ curl http://localhost:8080/be
 served by: frontend:2.7-SNAPSHOT:6dd49c71566d , backend:3.3-SNAPSHOT:f8cd01979ded
+```
+
 
 
 Add additional notes about how to deploy this on a live system
