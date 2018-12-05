@@ -60,7 +60,8 @@ Add additional notes about how to deploy this on a live system
 * [SprintBoot](http://spring.io/projects/spring-boot) - Self contained application environment
 
 ## References
-Please read [docker-maven-plugin](https://github.com/spotify/docker-maven-plugin) for details on plugin usage.
+* Please read [docker-maven-plugin](https://github.com/spotify/docker-maven-plugin) for details on plugin usage.
+* Deploy spring-app on Minikube article from[My Developer Planet](https://mydeveloperplanet.com/2018/05/30/build-and-deploy-a-spring-boot-app-on-minikube-part-2/)
 
 ## Authors
  **Chen Alkabets**
