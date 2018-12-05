@@ -62,16 +62,9 @@ $ docker pull myregistrydomain.com/chenchuk77/frontend:2.7-SNAPSHOT
 
 ```
 
-TODO
-https://mydeveloperplanet.com/2018/05/30/build-and-deploy-a-spring-boot-app-on-minikube-part-2/
-
-
-
-
-
 
 ###More minikube/kubectl commands:
-
+```
 kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
 kubectl expose deployment hello-minikube --type=NodePort
 kubectl get pod
@@ -89,3 +82,4 @@ kubectl logs fe-depl-949bf9fd-bw2dw
 kubectl exec fe-depl-949bf9fd-bw2dw env # run shell command
 kubectl get svc # service used to expose pods outside the cluster
 kubectl describe service/fe-depl
+```
