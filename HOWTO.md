@@ -62,8 +62,8 @@ $ docker pull myregistrydomain.com/chenchuk77/frontend:2.7-SNAPSHOT
 
 ```
 
+#### More minikube/kubectl commands:
 
-###More minikube/kubectl commands:
 ```
 kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
 kubectl expose deployment hello-minikube --type=NodePort
