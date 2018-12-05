@@ -31,19 +31,24 @@ To build and run, use the following procedure :
 2. clean, compile, and build docker image
 3. run new version of the service
 
-Backend development:
+#### Local development (running local containers)
+
+- Backend:
 ```
-docker stop $(docker ps | grep 8085|awk '{print $1}') && \
-mvn clean package dockerfile:build && \
+docker stop $(docker ps | grep 8085|awk '{print $1}') ; \
+mvn clean package dockerfile:build install && \
 docker run -p 8085:8085 -t chenchuk77/backend
 ```
-
-Frontend development: 
+- Frontend: 
 - set backend ip when launch
 ```
-docker stop $(docker ps | grep 8080|awk '{print $1}') && \
-mvn clean package dockerfile:build && \
+docker stop $(docker ps | grep 8080|awk '{print $1}') ; \
+mvn clean package dockerfile:build install && \
 docker run -p 8080:8080 -e BACKEND_IP=192.168.2.57-t chenchuk77/frontend
+```
+#### Kubernetes ( push to private registry, no docker run )
+```
+mvn clean package dockerfile:build install dockerfile:push
 ```
 
 ## Deployment
