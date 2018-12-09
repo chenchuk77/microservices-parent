@@ -5,15 +5,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: fe
+      app: frontend
   replicas: 2
   template:
     metadata:
       labels:
-        app: fe
+        app: frontend
     spec:
       containers:
-      - name: fe
+      - name: frontend
         image: myregistrydomain.com/chenchuk77/frontend:2.8-SNAPSHOT
         ports:
         - containerPort: 8080
