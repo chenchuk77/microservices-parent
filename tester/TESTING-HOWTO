@@ -1,0 +1,24 @@
+# example of simulating real-time upgrade/scale
+#
+# use this on the minikube machine. its query the api every 1s
+# it shows how upgrade/scaling performs
+#
+
+# create a starter deployment (example: 4 fe of SNAPSHOT-2.7)
+kubectl apply -f depl4fe-27.yml
+
+# expose deployment by:
+kubectl expose deployment fe-deployment --name fe-deployment --type=LoadBalancer --target-port=8080
+
+# run test loop from a different terminal
+minikube ip                               ### find ip
+kubectl get service | grep fe-deployment  ### find port
+while true; do curl http://192.168.99.100:30164/id; sleep 1s; done
+
+# upgrade deployment (2*fe of SNAPSHOT-2.8) or any other:
+kubectl apply -f depl2fe-28.yml
+kubectl apply -f depl4fe-27.yml
+kubectl apply -f depl5fe-29.yml
+
+
+

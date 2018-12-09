@@ -59,7 +59,21 @@ $ docker pull myregistrydomain.com/chenchuk77/frontend:2.7-SNAPSHOT
 ~/ minikube ip       # returns 192.168.99.100
 ~/ kubectl get svc   # returns 32458
 ~/ curl http://192.168.99.100:32458/id
+```
 
+8. scale out:
+```
+~/ kubectl scale deployment/fe-depl --replicas=4
+~/ kubectl get pods -o wide
+
+```
+
+9. verify multiple pods
+```
+~/ curl http://192.168.99.100:32458/id
+frontend:2.7-SNAPSHOT:fe-depl-6df46748f7-pp5w6
+~/ curl http://192.168.99.100:32458/id
+frontend:2.7-SNAPSHOT:fe-depl-6df46748f7-t5pxz
 ```
 
 #### More minikube/kubectl commands:

@@ -69,7 +69,7 @@ Add additional notes about how to deploy this on a live system
 * [Docker](http://https://www.docker.com/) - Containerized framework
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [SprintBoot](http://spring.io/projects/spring-boot) - Self contained application environment
-
+* [deployment](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/) of stateless apps using yml files (deploy, upgrade, scale)
 ## References
 * Please read [docker-maven-plugin](https://github.com/spotify/docker-maven-plugin) for details on plugin usage.
 * Deploy spring-app on Minikube article from[My Developer Planet](https://mydeveloperplanet.com/2018/05/30/build-and-deploy-a-spring-boot-app-on-minikube-part-2/)
