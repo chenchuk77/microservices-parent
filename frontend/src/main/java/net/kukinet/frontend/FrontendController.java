@@ -1,5 +1,6 @@
 package net.kukinet.frontend;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -12,6 +13,10 @@ import java.util.Map;
 
 @RestController
 public class FrontendController {
+
+    @Value("${backend.service.url}")
+    private String backendServiceUrl;
+
 
     @RequestMapping("/hello")
     public String sayHello() {
@@ -48,7 +53,9 @@ public class FrontendController {
 
     private String backendId(){
         // BACKEND_IP should be injected into env when invoking docker run
-        String backendIdUrl= "http://" + System.getenv("BACKEND_IP") + ":8085/id";
+        //String backendIdUrl= "http://" + System.getenv("BACKEND_IP") + ":8085/id";
+
+        String backendIdUrl= "http://" + backendServiceUrl + "/id";
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(backendIdUrl, String.class);
     }
