@@ -9,7 +9,7 @@
 
   <groupId>net.kukinet.backend</groupId>
   <artifactId>backend</artifactId>
-  <version>3.3-SNAPSHOT</version>
+  <version>3.5-SNAPSHOT</version>
 
   <name>backend</name>
   <url>http://localhost:8085/hello</url>

@@ -17,6 +17,13 @@ public class FrontendController {
     @Value("${backend.service.url}")
     private String backendServiceUrl;
 
+    @Value("${motd}")
+    private String motd;
+
+    @RequestMapping("/motd")
+    public String showMotd() {
+        return motd;
+    }
 
     @RequestMapping("/hello")
     public String sayHello() {

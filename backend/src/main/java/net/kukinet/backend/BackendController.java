@@ -1,5 +1,6 @@
 package net.kukinet.backend;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,14 @@ import java.util.Map;
 
 @RestController
 public class BackendController {
+
+    @Value("${motd}")
+    private String motd;
+
+    @RequestMapping("/motd")
+    public String showMotd() {
+        return motd;
+    }
 
     @RequestMapping("/hello")
     public String sayHello() {

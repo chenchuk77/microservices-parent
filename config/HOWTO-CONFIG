@@ -1,0 +1,20 @@
+1. run config server
+2. change params in git ( commit && push )
+3. call api http://fe/params
+
+
+check config retrieval from configserver:
+~ curl -s http://root:pass@localhost:8888/frontend/dev        | jq '.'
+~ curl -s http://root:pass@localhost:8888/frontend/dev/master | jq '.'
+
+# git fs structure
+├── backend-dev.properties
+├── backend-prod.properties
+├── frontend-dev.properties
+└── frontend-prod.properties
+
+# git properties file example (/frontend/dev)
+app.name=Frontend
+environment=dev
+stam.number=2356
+stam.string=hello from fe-dev
