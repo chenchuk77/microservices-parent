@@ -30,11 +30,19 @@ public class FrontendController {
     @Value("${stam.string}")
     private String stamString;
 
+    // from git
+    @Value("${environment}")
+    private String environment;
+
     @RequestMapping("/params")
     public String showParams() {
         return "appName: " + appName + "\n" + "stamString: " + stamString + "\n";
     }
 
+    @RequestMapping("/environment")
+    public String showEnvironment() {
+        return "Environment: " + environment + "\n";
+    }
 
     @RequestMapping("/motd")
     public String showMotd() {

@@ -40,3 +40,15 @@ appName: Frontend
 stamString: A VERY NEW MESSAGE
 
 lms@DEV-Chen:~/dev/demo4/microservices-parent/config$
+
+
+============= USING PROFILES IN launch time ===============
+# set active profile during runtime (artifact launch !)
+~ java -Dspring.profiles.active=prod -jar target/frontend-4.2-SNAPSHOT.jar
+
+# from intellij set envvar:
+SPRING_PROFILES_ACTIVE=dev gradle clean bootRun
+
+
+# verify
+curl http://localhost:8080/environment
