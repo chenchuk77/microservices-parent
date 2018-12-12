@@ -9,7 +9,7 @@
 
   <groupId>net.kukinet.frontend</groupId>
   <artifactId>frontend</artifactId>
-  <version>4.1-SNAPSHOT</version>
+  <version>4.2-SNAPSHOT</version>
 
   <name>frontend</name>
   <url>http://localhost:8080/hello</url>

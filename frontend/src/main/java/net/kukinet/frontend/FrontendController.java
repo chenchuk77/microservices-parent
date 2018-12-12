@@ -1,6 +1,7 @@
 package net.kukinet.frontend;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -11,6 +12,7 @@ import java.util.Map;
  * Created by lms on 30/11/18.
  */
 
+@RefreshScope
 @RestController
 public class FrontendController {
 
@@ -19,6 +21,20 @@ public class FrontendController {
 
     @Value("${motd}")
     private String motd;
+
+    // from git
+    @Value("${app.name}")
+    private String appName;
+
+    // from git
+    @Value("${stam.string}")
+    private String stamString;
+
+    @RequestMapping("/params")
+    public String showParams() {
+        return "appName: " + appName + "\n" + "stamString: " + stamString + "\n";
+    }
+
 
     @RequestMapping("/motd")
     public String showMotd() {

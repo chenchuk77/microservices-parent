@@ -18,3 +18,25 @@ app.name=Frontend
 environment=dev
 stam.number=2356
 stam.string=hello from fe-dev
+
+# checking non default endpoint
+curl http://root:pass@localhost:8080/actuator/beans
+curl http://localhost:8888/actuator/health
+
+curl -X POST http://localhost:8080/refresh
+
+
+
+example:
+~ curl http://localhost:8080/params
+appName: Frontend
+stamString: im a new message appears after calling REFRESH
+
+~ curl -X POST http://localhost:8080/actuator/refresh
+["config.client.version","stam.string"]
+
+~ curl http://localhost:8080/params
+appName: Frontend
+stamString: A VERY NEW MESSAGE
+
+lms@DEV-Chen:~/dev/demo4/microservices-parent/config$
